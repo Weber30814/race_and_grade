@@ -22,7 +22,7 @@ groups = ['group A', 'group B', 'group C', 'group D', 'group E']
 for g in groups:
     plt.figure(figsize=(6, 4))
     subset = df[df['race/ethnicity'] == g]
-    sns.scatterplot(data=subset, x='math score', y='reading score')
+    sns.regplot(data=subset, x='math score', y='reading score', scatter=True, ci=95)
     plt.title(f'Math vs Reading Score - {g}')
     plt.xlabel('Math Score')
     plt.ylabel('Reading Score')
